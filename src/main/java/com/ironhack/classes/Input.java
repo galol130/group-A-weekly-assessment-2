@@ -43,11 +43,9 @@ public class Input {
 		}
 		catch (NumberFormatException e) {
 			System.out.println("Id must be a number.");
-			idStr = "";
 		}
 		catch (Exception e) {
 			System.out.println("Something was wrong.");
-			idStr = "";
 		}
 		return result;
 	}
