@@ -14,6 +14,20 @@ public class Data {
 	private static List<Contact> contactList = new ArrayList<>();
 	private static List<Account> accountList = new ArrayList<>();
 
+	public static void showLeads() {
+//		for (Lead lead : leadList) {
+//			System.out.println(lead.toString());
+//		}
+		System.out.println("Just a test, delete later: LEADS");
+	}
+
+	public static void showAccounts() {
+		for (Account account : accountList) {
+			System.out.println(account.toString());
+		}
+		System.out.println("Just a test, delete later: ACCOUNTS");
+	}
+
 	public static List<Lead> getLeadList() {
 		return leadList;
 	}

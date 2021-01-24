@@ -1,21 +1,22 @@
 package com.ironhack.commands;
 
+import com.ironhack.classes.Lead;
+import com.ironhack.data.Data;
+
 public class Command {
 
 	public static void commandCaller(String[] command) {
 //		The command method is called
 		switch (command[0]){
 			case "new":
-				//Método a ser creado
-				//Lead.createLead();
+				//El la propia clase lead generar los datos necesarios con los setters.
+				//Data.getLeadList().add(new Lead());
 				break;
 			case "show": //two options
-				//if(command[1].equals("lead"))
-				//Método a ser creado
-				//Lead.showLeads();
-				//else
-				//Método a ser creado
-				//Account.showAccounts();
+				if(command[1].equals("leads"))
+					Data.showLeads();
+				else
+					Data.showAccounts();
 				break;
 			case "lookup":
 				//Método a ser creado

@@ -2,7 +2,7 @@ package com.ironhack.classes;
 
 import com.ironhack.enums.Industry;
 
-import java.util.Arrays;
+import java.util.ArrayList;
 import java.util.List;
 
 public class Account {
@@ -78,5 +78,18 @@ public class Account {
 
     public void setOpportunityList(List<Opportunity> opportunityList) {
         this.opportunityList = opportunityList;
+    }
+
+    @Override
+    public String toString() {
+        return "Account{" +
+                "id=" + id +
+                ", industry=" + industry +
+                ", employeeCount=" + employeeCount +
+                ", city='" + city + '\'' +
+                ", country='" + country + '\'' +
+                ", contactList=" + contactList +
+                ", opportunityList=" + opportunityList +
+                '}';
     }
 }
