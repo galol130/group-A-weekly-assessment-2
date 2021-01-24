@@ -22,23 +22,24 @@ public class Input {
                     || command.equals("show accounts")
                     || command.equals("exit")) {
                 return commandSplit;
-            } else if (commandSplit[0].equals("convert")
-                    && commandSplit.length == 2) {
+            } else if (commandSplit.length == 2
+                    && commandSplit[0].equals("convert")) {
                 //Here must validate id is a number
                 if (validIdFormat(commandSplit[1]))
                     return commandSplit;
-            } else if (commandSplit[0].concat(commandSplit[1]).equals("lookuplead")
-                    && commandSplit.length == 3) {
+            } else if (commandSplit.length == 3
+                    && commandSplit[0].concat(commandSplit[1]).equals("lookuplead")) {
                 //Here must validate id is a number;
                 if (validIdFormat(commandSplit[2]))
                     return commandSplit;
-            } else if (commandSplit[0].concat(commandSplit[1]).equals("changestatus")
-                    && commandSplit.length == 3) {
+            } else if (commandSplit.length == 3 &&
+                    commandSplit[0].concat(commandSplit[1]).equals("changestatus")) {
                 //Here must validate id is a number;
                 if (validIdFormat(commandSplit[2]))
                     return commandSplit;
             } else {
                 //command is not correct
+                System.out.println("WOLOLOOO");
                 System.out.println(ConsoleColors.RED_BOLD + "The command type does not match any available one. Try again!");
             }
         }
