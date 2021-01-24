@@ -2,6 +2,7 @@ package com.ironhack.classes;
 
 import com.ironhack.styles.ConsoleColors;
 
+import java.util.List;
 import java.util.Scanner;
 
 public class Input {
@@ -52,5 +53,64 @@ public class Input {
             System.out.println(ConsoleColors.RED_BOLD + "Error: An integer was expected as an Id");
         }
         return false;
+    }
+
+    public static String getStringUserInput(String prompt) {
+        Scanner scanner = new Scanner(System.in);
+        String userString;
+
+        while (true) {
+            System.out.println(prompt);
+            userString = scanner.nextLine();
+            if (userString.trim().length() > 0) {
+                return userString.trim();
+            }
+            else {
+                System.out.println("Not a valid input.");
+            }
+        }
+    }
+
+    public static String getEnumUserInput(String prompt, List<String> enumList) {
+        Scanner scanner = new Scanner(System.in);
+        String userString;
+
+        while (true) {
+            System.out.println(prompt);
+            userString = scanner.nextLine();
+            for (String enumElement : enumList) {
+                if (userString.equals(enumElement)) {
+                    return enumElement;
+                }
+            }
+            System.out.println("Not a valid input. Try again.");
+        }
+    }
+
+    public static int getNumberUserInput(String prompt) {
+        Scanner scanner = new Scanner(System.in);
+        String	str = "";
+        int		result = 0;
+
+        while (str.length() < 1) {
+            System.out.println(prompt);
+            str = scanner.nextLine();
+            try {
+                result = Integer.parseInt(str);
+                if (result < 0) {
+                    System.out.println("Number must be positive.");
+                    str = "";
+                }
+            }
+            catch (NumberFormatException e) {
+                System.out.println("You must type a number.");
+                str = "";
+            }
+            catch (Exception e) {
+                System.out.println("Something was wrong.");
+                str = "";
+            }
+        }
+        return result;
     }
 }
