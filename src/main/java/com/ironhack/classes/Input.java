@@ -39,7 +39,6 @@ public class Input {
                     return commandSplit;
             } else {
                 //command is not correct
-                System.out.println("WOLOLOOO");
                 System.out.println(ConsoleColors.RED_BOLD + "The command type does not match any available one. Try again!");
             }
         }
