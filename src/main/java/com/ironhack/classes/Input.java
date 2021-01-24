@@ -1,63 +1,10 @@
 package com.ironhack.classes;
 
+import com.ironhack.styles.ConsoleColors;
+
 import java.util.Scanner;
 
 public class Input {
-
-    //Gets a command from user input.
-    public static void getCommand() {
-        Scanner scanner = new Scanner(System.in);
-        String command;
-        String[] commandSplit;
-        int id;
-
-        while (true) {
-            System.out.println("Write a command:");
-            command = scanner.nextLine().toLowerCase().trim();
-            commandSplit = command.split(" ");
-            if (commandSplit.length != 2) {
-                System.out.println("Command format must be: [command] [id].");
-                continue;
-            }
-            try {
-                if (commandSplit[0].equals("convert")) {
-                    id = getInputId(commandSplit[1]);
-                    ////////Call to convert method with previous id;
-                    break;
-                } else {
-                    System.out.println("Not a valid command.");
-                }
-            } catch (Exception e) {
-                System.out.println("Something was wrong.");
-            }
-        }
-    }
-
-    public static int getInputId(String idStr) {
-        int result = 0;
-
-		try {
-			result = Integer.parseInt(idStr);
-		}
-		catch (NumberFormatException e) {
-			System.out.println("Id must be a number.");
-		}
-		catch (Exception e) {
-			System.out.println("Something was wrong.");
-		}
-		return result;
-	}
-        try {
-            result = Integer.parseInt(idStr);
-        } catch (NumberFormatException e) {
-            System.out.println("Id must be a number.");
-            idStr = "";
-        } catch (Exception e) {
-            System.out.println("Something was wrong.");
-            idStr = "";
-        }
-        return result;
-    }
 
     //Validates a command typed by a user, returning the command as an array of strings only if it's a valid one.
     public static String[] getValidCommand() {
@@ -75,15 +22,18 @@ public class Input {
                     || command.equals("show accounts")
                     || command.equals("exit")) {
                 return commandSplit;
-            } else if (commandSplit[0].equals("convert")) {
+            } else if (commandSplit[0].equals("convert")
+                    && commandSplit.length == 2) {
                 //Here must validate id is a number
                 if (validIdFormat(commandSplit[1]))
                     return commandSplit;
-            } else if (commandSplit[0].concat(commandSplit[1]).equals("lookuplead")) {
+            } else if (commandSplit[0].concat(commandSplit[1]).equals("lookuplead")
+                    && commandSplit.length == 3) {
                 //Here must validate id is a number;
                 if (validIdFormat(commandSplit[2]))
                     return commandSplit;
-            } else if (commandSplit[0].concat(commandSplit[1]).equals("changestatus")) {
+            } else if (commandSplit[0].concat(commandSplit[1]).equals("changestatus")
+                    && commandSplit.length == 3) {
                 //Here must validate id is a number;
                 if (validIdFormat(commandSplit[2]))
                     return commandSplit;
@@ -103,31 +53,4 @@ public class Input {
         }
         return false;
     }
-
-//	public static int getInputNumber(int min, int max) {
-//		Scanner scanner = new Scanner(System.in);
-//		String	str = "";
-//		int		result = 0;
-//
-//		while (str.length() < 1) {
-//			System.out.println("Type a number");
-//			str = scanner.nextLine();
-//			try {
-//				result = Integer.parseInt(str);
-//				if (result < min || result > max) {
-//					System.out.println("Number must be between " + min + " and " + max + ".");
-//					str = "";
-//				}
-//			}
-//			catch (NumberFormatException e) {
-//				System.out.println("You must type a number.");
-//				str = "";
-//			}
-//			catch (Exception e) {
-//				System.out.println("Something was wrong.");
-//				str = "";
-//			}
-//		}
-//		return result;
-//	}
 }
