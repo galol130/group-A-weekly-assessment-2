@@ -22,4 +22,19 @@ public class Helper {
         return ++accountId;
     }
 
+    public static int getLeadId() {
+        return leadId;
+    }
+
+    public static int getOpportunityId() {
+        return opportunityId;
+    }
+
+    public static int getContactId() {
+        return contactId;
+    }
+
+    public static int getAccountId() {
+        return accountId;
+    }
 }
