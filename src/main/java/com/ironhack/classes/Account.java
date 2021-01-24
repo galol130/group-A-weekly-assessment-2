@@ -3,7 +3,6 @@ package com.ironhack.classes;
 import com.ironhack.enums.Industry;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 public class Account {
@@ -15,7 +14,7 @@ public class Account {
     private List<Contact> contactList;
     private List<Opportunity> opportunityList;
 
-    public Account() {
+    public Account(List<Contact> contactList, List<Opportunity> opportunityList) {
         Helper.setAccountId();
         setIndustry();
         setEmployeeCount();
@@ -24,7 +23,6 @@ public class Account {
         setContactList(contactList);
         setOpportunityList(opportunityList);
     }
-
 
     //Getters and setters
 
