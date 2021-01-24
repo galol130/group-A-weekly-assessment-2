@@ -57,15 +57,8 @@ public class Account {
     }
 
     public void setIndustry() {
-        List<String> industryList = new ArrayList<>();
         String option;
-
-        industryList.add("PRODUCE");
-        industryList.add("ECOMMERCE");
-        industryList.add("MANUFACTURING");
-        industryList.add("MEDICAL");
-        industryList.add("OTHER");
-        option = Input.getEnumUserInput("Please, write the industry:", industryList);
+        option = Input.getEnumUserInput("Please, write the industry:", (String[]) Arrays.stream(Industry.values()).toArray());
         this.industry = Industry.valueOf(option);
     }
 

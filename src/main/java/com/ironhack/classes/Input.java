@@ -3,6 +3,7 @@ package com.ironhack.classes;
 import com.ironhack.styles.ConsoleColors;
 
 import java.util.List;
+import java.util.Locale;
 import java.util.Scanner;
 
 public class Input {
@@ -40,7 +41,7 @@ public class Input {
                     return commandSplit;
             } else {
                 //command is not correct
-                System.out.println(ConsoleColors.RED_BOLD + "The command type does not match any available one. Try again!");
+                System.out.println(ConsoleColors.RED_BOLD + "The command typed does not match any available one. Try again!");
             }
         }
     }
@@ -71,13 +72,18 @@ public class Input {
         }
     }
 
-    public static String getEnumUserInput(String prompt, List<String> enumList) {
+//  The method takes the prompt (message) and the Enums as an array list
+//  (To do this, use '(String[]) Arrays.stream(<EnumeratorName>.values()).toArray()' when calling the method)
+    public static String getEnumUserInput(String prompt, String[] enumList) {
         Scanner scanner = new Scanner(System.in);
         String userString;
 
         while (true) {
             System.out.println(prompt);
-            userString = scanner.nextLine();
+            for (String enumElement : enumList) {
+                System.out.println("\t"+enumElement);
+            }
+            userString = scanner.nextLine().toUpperCase();
             for (String enumElement : enumList) {
                 if (userString.equals(enumElement)) {
                     return enumElement;
