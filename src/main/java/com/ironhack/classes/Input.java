@@ -2,13 +2,11 @@ package com.ironhack.classes;
 
 import com.ironhack.styles.ConsoleColors;
 
-import java.util.List;
-import java.util.Locale;
 import java.util.Scanner;
 
 public class Input {
 
-    //Validates a command typed by a user, returning the command as an array of strings only if it's a valid one.
+//  Validates a command typed by a user, returning the command as an array of strings only if it's a valid one.
     public static String[] getValidCommand() {
         Scanner scanner = new Scanner(System.in);
         String command;
@@ -18,7 +16,7 @@ public class Input {
             System.out.println("Type a command:");
             command = scanner.nextLine().toLowerCase().trim();
             commandSplit = command.split(" ");
-            //Validates if the command is ok and doesn't require an [id]
+//          Validates if the command is ok and doesn't require an [id]
             if (command.equals("new lead")
                     || command.equals("show leads")
                     || command.equals("show accounts")
@@ -26,21 +24,21 @@ public class Input {
                 return commandSplit;
             } else if (commandSplit.length == 2
                     && commandSplit[0].equals("convert")) {
-                //Here must validate id is a number
+//              Here must validate id is a number
                 if (validIdFormat(commandSplit[1]))
                     return commandSplit;
             } else if (commandSplit.length == 3
                     && commandSplit[0].concat(commandSplit[1]).equals("lookuplead")) {
-                //Here must validate id is a number;
+//              Here must validate id is a number;
                 if (validIdFormat(commandSplit[2]))
                     return commandSplit;
             } else if (commandSplit.length == 3 &&
                     commandSplit[0].concat(commandSplit[1]).equals("changestatus")) {
-                //Here must validate id is a number;
+//              Here must validate id is a number;
                 if (validIdFormat(commandSplit[2]))
                     return commandSplit;
             } else {
-                //command is not correct
+//              Command is not correct
                 System.out.println(ConsoleColors.RED_BOLD + "The command typed does not match any available one. Try again!");
             }
         }
@@ -67,7 +65,7 @@ public class Input {
                 return userString.trim();
             }
             else {
-                System.out.println("Not a valid input.");
+                System.out.println(ConsoleColors.RED_BOLD + "Not a valid input.");
             }
         }
     }
@@ -89,7 +87,7 @@ public class Input {
                     return enumElement;
                 }
             }
-            System.out.println("Not a valid input. Try again.");
+            System.out.println(ConsoleColors.RED_BOLD + "Not a valid input. Try again.");
         }
     }
 
@@ -104,16 +102,16 @@ public class Input {
             try {
                 result = Integer.parseInt(str);
                 if (result < 0) {
-                    System.out.println("Number must be positive.");
+                    System.out.println(ConsoleColors.RED_BOLD + "Number must be positive.");
                     str = "";
                 }
             }
             catch (NumberFormatException e) {
-                System.out.println("You must type a number.");
+                System.out.println(ConsoleColors.RED_BOLD + "You must type a number.");
                 str = "";
             }
             catch (Exception e) {
-                System.out.println("Something was wrong.");
+                System.out.println(ConsoleColors.RED_BOLD + "Something was wrong.");
                 str = "";
             }
         }

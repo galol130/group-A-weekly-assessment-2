@@ -2,7 +2,7 @@ package com.ironhack.classes;
 
 import com.ironhack.enums.Industry;
 
-import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class Account {
@@ -24,8 +24,8 @@ public class Account {
         setOpportunityList(opportunityList);
     }
 
-    //Getters and setters
 
+//  Getters and setters
     public int getId() {
         return id;
     }

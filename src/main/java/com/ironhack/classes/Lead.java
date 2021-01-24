@@ -14,12 +14,11 @@ public class Lead {
     }
 
 
-    //Getters and setters
+//  Getters and setters
     public int getId() {
         return id;
     }
 
-//  No Utilizar el helper
     public void setId() {
         this.id = 1;
     }

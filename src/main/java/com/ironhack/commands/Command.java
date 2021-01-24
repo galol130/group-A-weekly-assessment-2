@@ -3,7 +3,7 @@ package com.ironhack.commands;
 public class Command {
 
 	public static void commandCaller(String[] command) {
-		//The command method is called
+//		The command method is called
 		switch (command[0]){
 			case "new":
 				//Método a ser creado
