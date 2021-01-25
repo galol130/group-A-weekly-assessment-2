@@ -17,8 +17,8 @@ public class Lead {
         setPhoneNumber(phoneNumber);
         setEmail(email);
         setCompanyName(companyName);
-        setId(Data.getLeadList().size()); //the ID will be set as the size of the lead list, so it will always be put on
-                                          //the last position
+        setId(Data.getLeadList().size()); //the ID will be set as the size of the lead list, so it will always be equal
+                                          //to the last position
     }
 
 //  Getters and setters
