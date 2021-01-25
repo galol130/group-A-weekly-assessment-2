@@ -23,22 +23,35 @@ public class Data {
 	}
 
 	//lookUpLead will show all the details of a lead on the console. It just iterates through our list of leads and
-	//print the information whenever there is a coincidence of IDs.
+	//print the information whenever there is a coincidence of IDs. If there is no coincidence, it will show an
+	//error message.
 	public void lookUpLead(int id) {
+		boolean check = false;
 		for (Lead lead : leadList) {
 			if (id == lead.getId()) {
+				check = true;
 				System.out.println(lead);
 			}
 		}
+		if (!check) {
+			System.err.println("We can't find this ID in our database.");
+		}
 	}
 
+	//convertId takes an id as a parameter and iterates the lead list to find a coincidence. If found, it will add the
+	//lead information to the contact list and will remove the lead from the lead list. If there is no coincidence, it
+	//will show an error message.
 	public void convertId(int id) {
-
+		boolean check = false;
 		for (Lead lead : leadList) {
 			if (id == lead.getId()) {
+				check = true;
 				contactList.add(new Contact(lead));
 				leadList.remove(id);
 			}
+		}
+		if (!check) {
+			System.err.println("We can't find this ID in our database.");
 		}
 	}
 
