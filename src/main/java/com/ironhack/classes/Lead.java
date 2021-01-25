@@ -17,24 +17,9 @@ public class Lead {
         setPhoneNumber(phoneNumber);
         setEmail(email);
         setCompanyName(companyName);
-        createLeadID();
+        setId(Data.getLeadList().size()); //the ID will be set as the size of the lead list, so it will always be put on
+                                          //the last position
     }
-
-    //This method calls the Data class method getLeadList() to retrieve the list of Leads and sets the ID for the new
-    //Lead. The ID will be equal to the list's size, so when added to the list, it will also be its position in the list.
-    //It will also add the Lead to the Lead list whenever it is created.
-    private void createLeadID() {
-        List<Lead> leadList = Data.getLeadList();
-        setId(leadList.size());
-        addLeadToList();
-    }
-
-    //This method will add a new Lead to a list located in Data everytime a new Lead is instantiated.
-    private void addLeadToList() {
-        List<Lead> leadList = Data.getLeadList();
-        leadList.add(new Lead(getName(), getPhoneNumber(), getEmail(), getCompanyName()));
-    }
-
 
 //  Getters and setters
     public Integer getId() {
