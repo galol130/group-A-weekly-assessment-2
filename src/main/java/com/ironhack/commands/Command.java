@@ -1,112 +1,81 @@
 package com.ironhack.commands;
 
 import com.ironhack.classes.Contact;
+import com.ironhack.classes.Input;
 import com.ironhack.classes.Lead;
 import com.ironhack.classes.Opportunity;
 import com.ironhack.data.Data;
 import com.ironhack.enums.Product;
 import com.ironhack.enums.Status;
+import com.ironhack.styles.ConsoleColors;
 
-import java.util.List;
-import java.util.Locale;
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Command {
 
 	public static void commandCaller(String[] command) {
-//		The command method is called
+
 		switch (command[0]){
 			case "new":
 				//El la propia clase lead generar los datos necesarios con los setters.
 				//Data.getLeadList().add(new Lead());
 				break;
-			case "show": //two options
+			case "show":
 				if(command[1].equals("leads"))
 					Data.showLeads();
 				else
 					Data.showAccounts();
 				break;
 			case "lookup":
-				//Método a ser creado
-				//Lead.lookupById(Integer.parseInt(command[2]));
+				Data.lookUpLead(Integer.parseInt(command[2]));
 				break;
 			case "convert":
 				convert(Integer.parseInt(command[1]));
 				break;
 			case "change":
-				//Método a ser creado
-				//Opportunity.changeStatus(Integer.parseInt(command[2]));
+				Data.changeOpportunityStatus(Integer.parseInt(command[2]));
 				break;
 			case "exit":
+				System.out.println(ConsoleColors.YELLOW_BOLD + "Thank you for using E.M.O.F. CRM!");
 				System.exit(1);
 				break;
 			default:
 				break;
 		}
+		Scanner sc = new Scanner(System.in);
+		System.out.println(ConsoleColors.WHITE_BOLD + "Press 'Intro' to continue");
+		sc.nextLine();
 	}
 
 	public static void convert(Integer id){
-		// Creado para poder sacar la información de la lista de leads.
-		List<Lead> leadList = Data.getLeadList();
-		Contact contact = null;
+//		First we get the Lead using the id
+		Lead lead = Data.getLeadById(id);
+		if(lead != null) {
+//			Create contact using information in lead
+			Contact contact = new Contact(lead);
+			int index = 0;
 
-		int index = 0;
+//			Ask the user about the product, allowing only the options in Product Enumerator
+			String prompt = "Which is the product?";
+			String product = Input.getEnumUserInput(prompt, (String[]) Arrays.stream(Product.values()).toArray());
+			Product productEnum = Product.valueOf(product);
 
-		// Bucle para recorrer la lista y encontrar el id del lead que coincide con el id que nos han pasado
-		for (int i = 0; i<leadList.size(); i++) {
-			// Cuando coincide, creamos el contacto pasandole el lead correspondiente a ese id dado
-			if(leadList.get(i).getId() == id) {
+//			Ask the user for the number of trucks
+			int trucksQty = Input.getNumberUserInput("How many trucks?");
 
-				contact = new Contact(leadList.get(i));
-				index = i;
-				break;
+//			Create new opportunity with the data collected
+			Data.addOpportunity(new Opportunity(productEnum, trucksQty, contact, Status.OPEN));
 
-			}
+//			Create account
+
+
+// 			Finally, the lead is deleted
+			Data.deleteLead(index);
+
+		}else{
+			System.out.println(ConsoleColors.RED_BOLD + "Error fetching the ID! Check the ID. If error persists, contact admin");
+			System.out.println(ConsoleColors.WHITE_BOLD);
 		}
-
-		// Creamos una instancia de scaner para poder scanear lo que nos venga de consola
-		Scanner scanner = new Scanner(System.in);
-
-		System.out.println("Which is the product?");
-		System.out.println("(HYBRID, FLATBED, BOX)");
-		String product;
-
-		// Guardará el enum resultado del bucle que veremos a continuación
-		Product productEnum = null;
-
-
-		// do while que consigue los datos del enum, se recoge el resultado y se filtra (quita los espacio laterales
-		// y lo pone todito en mayúscula para que sea caseInsensitive).
-		do {
-				product = scanner.nextLine().trim().toUpperCase();
-			switch (product) {
-				case "HYBRID":
-					productEnum = Product.HYBRID;
-					break;
-				case "FLATBED":
-					productEnum = Product.FLATBED;
-					break;
-				case "BOX":
-					productEnum = Product.BOX;
-					break;
-				default:
-					System.out.println("That is not a valid input, please write it again.");
-			}
-
-		  // Mientras no consigamos datos que sirvan y sean correctos por parte del usuario, se repetirá el proceso.
-		} while(productEnum == null);
-
-		System.out.println("How many trucks?");
-		int quantity = scanner.nextInt();
-
-		// Utilizamos el método addOportunity para añadir una nueva oprotunidad a la oportunityList que se encuentra en Data.
-		Data.addOpportunity(new Opportunity(productEnum, quantity, contact, Status.OPEN));
-		// Eliminamos de la lista de leads que se encuentra en data por medio del índice
-		Data.deleteLead(index);
-
-		//Se debe llamar al método de crear Opportunity
-		//Luego llamar al método de crear Contact
-		//Luego llamar al método de crear Account
-		//Por último eliminar el lead del id que llega a este método
 	}
 }

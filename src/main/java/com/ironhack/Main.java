@@ -14,6 +14,7 @@ public class Main {
 //      Call the getValidCommand method that validates menu input and calls the methods accordingly.
             String[] command = Input.getValidCommand();
             Command.commandCaller(command);
+
         }
     }
 }

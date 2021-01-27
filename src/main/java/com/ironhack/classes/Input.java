@@ -1,7 +1,6 @@
 package com.ironhack.classes;
 
 import com.ironhack.styles.ConsoleColors;
-
 import java.util.Scanner;
 
 public class Input {
@@ -13,7 +12,7 @@ public class Input {
         String[] commandSplit;
 
         while (true) {
-            System.out.println("Type a command:");
+            System.out.println(ConsoleColors.YELLOW_BOLD + "\nType a command:");
             command = scanner.nextLine().toLowerCase().trim();
             commandSplit = command.split(" ");
 //          Validates if the command is ok and doesn't require an [id]
@@ -40,6 +39,7 @@ public class Input {
             } else {
 //              Command is not correct
                 System.out.println(ConsoleColors.RED_BOLD + "The command typed does not match any available one. Try again!");
+                System.out.println(ConsoleColors.WHITE_BOLD);
             }
         }
     }
@@ -66,6 +66,7 @@ public class Input {
             }
             else {
                 System.out.println(ConsoleColors.RED_BOLD + "Not a valid input.");
+                System.out.println(ConsoleColors.WHITE_BOLD);
             }
         }
     }
@@ -81,7 +82,7 @@ public class Input {
             for (String enumElement : enumList) {
                 System.out.println("\t"+enumElement);
             }
-            userString = scanner.nextLine().toUpperCase();
+            userString = scanner.nextLine().trim().toUpperCase();
             for (String enumElement : enumList) {
                 if (userString.equals(enumElement)) {
                     return enumElement;
