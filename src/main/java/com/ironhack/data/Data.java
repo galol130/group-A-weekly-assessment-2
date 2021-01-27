@@ -38,6 +38,17 @@ public class Data {
 		}
 	}
 
+	// Método para añadir una oportunidad a la lista de oportunidades
+	public static void addOpportunity(Opportunity opportunity){
+		opportunityList.add(opportunity);
+	}
+
+	// Elimina una posición del leadList pasada por parámetros
+	public static void deleteLead(int num){
+		leadList.remove(num);
+	}
+
+
 	//convertId takes an id as a parameter and iterates the lead list to find a coincidence. If found, it will add the
 	//lead information to the contact list and will remove the lead from the lead list. If there is no coincidence, it
 	//will show an error message.

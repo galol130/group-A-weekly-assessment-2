@@ -64,12 +64,19 @@ public class Command {
 			}
 		}
 
+		// Creamos una instancia de scaner para poder scanear lo que nos venga de consola
 		Scanner scanner = new Scanner(System.in);
+
 		System.out.println("Which is the product?");
 		System.out.println("(HYBRID, FLATBED, BOX)");
 		String product;
+
+		// Guardará el enum resultado del bucle que veremos a continuación
 		Product productEnum = null;
 
+
+		// do while que consigue los datos del enum, se recoge el resultado y se filtra (quita los espacio laterales
+		// y lo pone todito en mayúscula para que sea caseInsensitive).
 		do {
 				product = scanner.nextLine().trim().toUpperCase();
 			switch (product) {
@@ -86,16 +93,16 @@ public class Command {
 					System.out.println("That is not a valid input, please write it again.");
 			}
 
+		  // Mientras no consigamos datos que sirvan y sean correctos por parte del usuario, se repetirá el proceso.
 		} while(productEnum == null);
 
 		System.out.println("How many trucks?");
 		int quantity = scanner.nextInt();
 
+		// Utilizamos el método addOportunity para añadir una nueva oprotunidad a la oportunityList que se encuentra en Data.
 		Data.addOpportunity(new Opportunity(productEnum, quantity, contact, Status.OPEN));
+		// Eliminamos de la lista de leads que se encuentra en data por medio del índice
 		Data.deleteLead(index);
-
-		// Opportunity(Product product, int quantity, Contact decisionMaker, Status status)
-
 
 		//Se debe llamar al método de crear Opportunity
 		//Luego llamar al método de crear Contact
