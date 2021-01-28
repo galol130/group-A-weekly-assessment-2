@@ -2,6 +2,7 @@ package com.ironhack.classes;
 
 import com.ironhack.enums.Industry;
 import com.ironhack.enums.Product;
+import com.ironhack.styles.ConsoleColors;
 
 import java.util.Arrays;
 import java.util.List;
@@ -87,13 +88,13 @@ public class Account {
 
     @Override
     public String toString() {
-        return  "\tID=" + id +
-                " |  Industry: " + industry +
+        return  ConsoleColors.WHITE_BRIGHT + "\tID " + id +
+                ConsoleColors.WHITE_BOLD +
+                "  |  Industry: " + industry +
                 ", EmployeeCount: " + employeeCount +
                 ", City: " + city +
                 ", Country: " + country +
                 ", Number of Contacts: " + contactList.size() +
-                ", Number of Opportunities: " + opportunityList.size() +
-                '}';
+                ", Number of Opportunities: " + opportunityList.size();
     }
 }

@@ -35,7 +35,8 @@ public class Data {
         for (Lead lead : leadList) {
             if (id == lead.getId()) {
                 check = true;
-                System.out.println(ConsoleColors.WHITE_BOLD + lead);
+                System.out.println(ConsoleColors.YELLOW_BOLD + lead);
+                System.out.println(ConsoleColors.WHITE_BOLD);
             }
         }
         if (!check) {
@@ -58,16 +59,19 @@ public class Data {
     public static void changeOpportunityStatus(int id) {
         Opportunity opp = getOpportunityById(id);
         if(opp != null){
-            String option = null;
-            while (!option.equals("won") && !option.equals("lost") ){
+            String option = "";
+            while (!option.equals("won") && !option.equals("lost")){
                 option = Input.getStringUserInput("Type 'won' or 'lost' to close the Opportunity and change it's status").toLowerCase();
             }
             if(option.equals("won")){
                 opp.setStatus(Status.CLOSED_WON);
-                System.out.println(ConsoleColors.WHITE_BOLD + "Opportunity set as 'Closed-Won'");
-            }else{
+                System.out.println(ConsoleColors.YELLOW_BOLD + "Opportunity set as 'Closed-Won'");
+                System.out.println(ConsoleColors.WHITE_BOLD);
+            }
+            if(option.equals("lost")){
                 opp.setStatus(Status.CLOSED_LOST);
-                System.out.println(ConsoleColors.WHITE_BOLD + "Opportunity set as 'Closed-Lost'");
+                System.out.println(ConsoleColors.YELLOW_BOLD + "Opportunity set as 'Closed-Lost'");
+                System.out.println(ConsoleColors.WHITE_BOLD);
             }
         }else{
             System.out.println(ConsoleColors.RED_BOLD + "Sorry, we can't find this ID in our database.");

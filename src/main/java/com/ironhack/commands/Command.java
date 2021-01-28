@@ -20,7 +20,8 @@ public class Command {
 				try {
 					Lead newLead = new Lead();
 					Data.getLeadList().add(newLead);
-					System.out.println(ConsoleColors.WHITE_BOLD + "Lead created successfully with ID: " + newLead.getId());
+					System.out.println(ConsoleColors.YELLOW_BOLD  + "Lead created successfully with ID: " + newLead.getId());
+					System.out.println(ConsoleColors.WHITE_BOLD);
 				}catch (Exception e) {
 					System.out.println(ConsoleColors.RED_BOLD + "Couldn't save the Lead. Try again!");
 					System.out.println(ConsoleColors.WHITE_BOLD);
@@ -67,7 +68,8 @@ public class Command {
 			Opportunity opp = new Opportunity(contact);
 			Data.getOpportunityList().add(opp);
 			Data.getAccountList().add(new Account(Data.getContactList(), Data.getOpportunityList()));
-			System.out.println(ConsoleColors.WHITE_BOLD + "Lead ID: " + lead.getId() + " converted successfully!");
+			System.out.println(ConsoleColors.YELLOW_BOLD + "Lead ID: " + lead.getId() + " converted successfully!");
+			System.out.println(ConsoleColors.WHITE_BOLD);
 			Data.deleteLead(lead);
 		}else{
 			System.out.println(ConsoleColors.RED_BOLD + "Error fetching the ID! Check the ID. If error persists, contact admin");
