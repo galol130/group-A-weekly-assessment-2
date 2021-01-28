@@ -35,11 +35,11 @@ public class Start {
                 ConsoleColors.BLUE + "Leads\n" + ConsoleColors.WHITE_BOLD +
                 ConsoleColors.WHITE_BRIGHT + "\tNew lead"+ ConsoleColors.WHITE_BOLD +" to enter a new lead record.\n" +
                 ConsoleColors.WHITE_BRIGHT + "\tShow leads"+ ConsoleColors.WHITE_BOLD +" to view all current leads.\n" +
-                ConsoleColors.WHITE_BRIGHT + "\tLookup lead [id]"+ ConsoleColors.WHITE_BOLD +" to search for a specific lead.\n" +
+                ConsoleColors.WHITE_BRIGHT + "\tLookup lead [and type the desired id]"+ ConsoleColors.WHITE_BOLD +" to search for a specific lead.\n" +
                 ConsoleColors.BLUE + "Opportunities\n" + ConsoleColors.WHITE_BOLD +
-                ConsoleColors.WHITE_BRIGHT + "\tConvert [id]"+ ConsoleColors.WHITE_BOLD +" to convert a lead into an opportunity.\n" +
+                ConsoleColors.WHITE_BRIGHT + "\tConvert [and type the desired id]"+ ConsoleColors.WHITE_BOLD +" to convert a lead into an opportunity.\n" +
                 ConsoleColors.WHITE_BRIGHT + "\tShow opps"+ ConsoleColors.WHITE_BOLD +" to view all current opportunities.\n" +
-                ConsoleColors.WHITE_BRIGHT + "\tChange status [id]"+ ConsoleColors.WHITE_BOLD +" to change an opportunity status.\n" +
+                ConsoleColors.WHITE_BRIGHT + "\tChange status [and type the desired id]"+ ConsoleColors.WHITE_BOLD +" to change an opportunity status.\n" +
                 ConsoleColors.BLUE + "Accounts\n" + ConsoleColors.WHITE_BOLD +
                 ConsoleColors.WHITE_BRIGHT + "\tShow accounts"+ ConsoleColors.WHITE_BOLD +" to view all current accounts.\n" +
                 ConsoleColors.WHITE_BRIGHT + "Exit"+ ConsoleColors.WHITE_BOLD +" to quit the system.");
