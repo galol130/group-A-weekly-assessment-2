@@ -15,7 +15,7 @@ public class Account {
     private List<Opportunity> opportunityList;
 
     public Account(List<Contact> contactList, List<Opportunity> opportunityList) {
-        Helper.setAccountId();
+        setId(Helper.setAccountId());
         setIndustry();
         setEmployeeCount();
         setCity();
@@ -52,6 +52,10 @@ public class Account {
 
     public List<Opportunity> getOpportunityList() {
         return opportunityList;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public void setIndustry() {

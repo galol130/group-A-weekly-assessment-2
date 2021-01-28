@@ -13,12 +13,11 @@ public class Lead {
     private String companyName;
 
     public Lead(String name, String phoneNumber, String email, String companyName) {
+        setId(Helper.setLeadId());
         setName(name);
         setPhoneNumber(phoneNumber);
         setEmail(email);
         setCompanyName(companyName);
-        setId(Data.getLeadList().size()); //the ID will be set as the size of the lead list, so it will always be equal
-                                          //to the last position
     }
 
 //  Getters and setters
@@ -26,12 +25,8 @@ public class Lead {
         return id;
     }
 
-    //We might use the Helper class to do it.
     public void setId(Integer id) {
-        if (id == null) {
-            this.id = 0;
-        } else this.id = id;
-
+        this.id = id;
     }
 
     public String getName() {
@@ -39,7 +34,7 @@ public class Lead {
     }
 
     public void setName(String name) {
-        this.name = name;
+        this.name = Input.getStringUserInput("Please, write the name:");
     }
 
     public String getPhoneNumber() {
@@ -47,7 +42,7 @@ public class Lead {
     }
 
     public void setPhoneNumber(String phoneNumber) {
-        this.phoneNumber = phoneNumber;
+        this.phoneNumber = Input.getStringUserInput("Please, write the phone number:");
     }
 
     public String getEmail() {
@@ -55,7 +50,7 @@ public class Lead {
     }
 
     public void setEmail(String email) {
-        this.email = email;
+        this.email = Input.getStringUserInput("Please, write the email:");
     }
 
     public String getCompanyName() {
@@ -63,7 +58,7 @@ public class Lead {
     }
 
     public void setCompanyName(String companyName) {
-        this.companyName = companyName;
+        this.companyName = Input.getStringUserInput("Please, write the city:");
     }
 
     @Override
