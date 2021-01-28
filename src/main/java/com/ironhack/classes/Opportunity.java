@@ -21,7 +21,14 @@ public class Opportunity {
         setStatus(Status.OPEN);
     }
 
-// Getters and setters
+    public Opportunity(Product product, int quantity, Contact decisionMaker, Status status) {
+        this.product = product;
+        this.quantity = quantity;
+        this.decisionMaker = decisionMaker;
+        this.status = status;
+    }
+
+    // Getters and setters
     public Integer getId() {
         return id;
     }
