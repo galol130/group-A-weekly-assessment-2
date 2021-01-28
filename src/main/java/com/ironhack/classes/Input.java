@@ -44,6 +44,7 @@ public class Input {
         }
     }
 
+//    Validates if Id is an integer
     public static boolean validIdFormat(String stringId) {
         try {
             Integer.parseInt(stringId);
@@ -54,6 +55,7 @@ public class Input {
         return false;
     }
 
+//      The method takes the prompt (message) and returns the user input as a String
     public static String getStringUserInput(String prompt) {
         Scanner scanner = new Scanner(System.in);
         String userString;
@@ -92,6 +94,7 @@ public class Input {
         }
     }
 
+//      The method takes the prompt (message) and returns the user input as an int or catches a exception if it isn't
     public static int getNumberUserInput(String prompt) {
         Scanner scanner = new Scanner(System.in);
         String	str = "";
