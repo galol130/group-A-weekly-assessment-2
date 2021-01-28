@@ -39,13 +39,27 @@ class DataTest {
         Data.showLeads();
     }
 
-
     @Test
-    void lookUpLead() {
+    void lookUpLead_ValidId_LeadShownAppropriately() {
+        Data.lookUpLead(2);
     }
 
     @Test
-    void deleteLead() {
+    void lookUpLead_WrongId_ErrorMessage() {
+        Data.lookUpLead(63);
+    }
+
+    @Test
+    void deleteLead_Lead_CorrectlyRemoved() {
+        Data.showLeads();
+        Data.deleteLead(leadList.get(1));
+        System.out.println("Lead list after deleting the lead.");
+        Data.showLeads();
+    }
+
+    @Test
+    void deleteLead_NotExistingLead_ErrorMessage() {
+        Data.deleteLead(new Lead(4, "bla bla", "bla bla", "bla bla", "ble"));
     }
 
     @Test
