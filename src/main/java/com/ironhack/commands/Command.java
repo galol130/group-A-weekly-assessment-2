@@ -60,17 +60,8 @@ public class Command {
 			Contact contact = new Contact(lead.getName(), lead.getPhoneNumber(), lead.getEmail(), lead.getCompanyName());
 			Data.getContactList().add(contact);
 
-////			Ask the user about the product, allowing only the options in Product Enumerator
-//			String prompt = "Which is the product?";
-//			String product = Input.getEnumUserInput(prompt, (String[]) Arrays.stream(Product.values()).toArray());
-//			Product productEnum = Product.valueOf(product);
-//
-////			Ask the user for the number of trucks
-//			int trucksQty = Input.getNumberUserInput("How many trucks?");
-//
-////			Create new opportunity with the data collected and add it to the list
-//			Opportunity opp = new Opportunity(productEnum, trucksQty, contact, Status.OPEN);
-			Opportunity opp = null;
+//			Create opportunity with contact information. The other fields are asked by the class.
+			Opportunity opp = new Opportunity(contact);
 			Data.getOpportunityList().add(opp);
 
 //			Create account and add it to the list
