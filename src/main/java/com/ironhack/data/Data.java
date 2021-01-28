@@ -51,7 +51,7 @@ public class Data {
 //        opportunityList.add(opportunity);
 //    }
 
-//  Removes the lead by ID
+    //Removes the desired lead
     public static void deleteLead(Lead lead) {
         if (leadList.contains(lead)) {
             leadList.remove(lead);
