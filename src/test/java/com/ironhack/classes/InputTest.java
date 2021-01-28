@@ -8,31 +8,15 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class InputTest {
 
-    @BeforeEach
-    void setUp() {
-    }
-
-    @AfterEach
-    void tearDown() {
+    @Test
+    void validIdFormat_ValidInput_True() {
+        assertTrue(Input.validIdFormat("100"));
+        assertTrue(Input.validIdFormat("10000"));
     }
 
     @Test
-    void getValidCommand() {
-    }
-
-    @Test
-    void validIdFormat() {
-    }
-
-    @Test
-    void getStringUserInput() {
-    }
-
-    @Test
-    void getEnumUserInput() {
-    }
-
-    @Test
-    void getNumberUserInput() {
+    void validIdFormat_inValidInput_False() {
+        assertFalse(Input.validIdFormat("asf"));
+        assertFalse(Input.validIdFormat("-10000"));
     }
 }

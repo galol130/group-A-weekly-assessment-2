@@ -53,7 +53,12 @@ public class Data {
 
 //  Removes the lead by ID
     public static void deleteLead(Lead lead) {
-        leadList.remove(lead);
+        if (leadList.contains(lead)) {
+            leadList.remove(lead);
+        } else {
+            System.out.println(ConsoleColors.RED_BOLD + "Sorry, the lead is not in the Lead List.");
+        }
+        System.out.println(ConsoleColors.WHITE_BOLD);
     }
 
 //  Looks for the opportunity and changes it's status accordingly to the user input
