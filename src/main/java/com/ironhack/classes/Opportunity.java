@@ -3,6 +3,7 @@ package com.ironhack.classes;
 import com.ironhack.enums.Industry;
 import com.ironhack.enums.Product;
 import com.ironhack.enums.Status;
+import com.ironhack.styles.ConsoleColors;
 
 import java.util.Arrays;
 
@@ -73,11 +74,12 @@ public class Opportunity {
 
     @Override
     public String toString() {
-        return "Opportunity ID: " + id +
+        return  ConsoleColors.WHITE_BRIGHT + "\tID: " + id +
+                ConsoleColors.WHITE_BOLD +
                 ", Product: " + product.name() +
                 ", Quantity: " + quantity +
                 ", Decision Maker: " + decisionMaker.getName() +  ", from company: " + decisionMaker.getCompanyName() +
-                " - Phone: " + decisionMaker.getPhoneNumber() + " - Email: " + decisionMaker.getEmail() +
-                " || STATUS: " + status.name();
+                " - Phone: " + decisionMaker.getPhoneNumber() + " - Email: " + decisionMaker.getEmail() + " || " +
+                ConsoleColors.WHITE_BRIGHT + "STATUS: " + status.name() + ConsoleColors.WHITE_BOLD;
     }
 }

@@ -58,7 +58,7 @@ public class Lead {
     }
 
     public void setCompanyName() {
-        this.companyName = Input.getStringUserInput("Please, write the city:");
+        this.companyName = Input.getStringUserInput("Please, write the company name:");
     }
 
     @Override
