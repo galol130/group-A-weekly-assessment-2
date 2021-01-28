@@ -14,7 +14,7 @@ public class Opportunity {
     private Status status;
 
     public Opportunity(Contact decisionMaker) {
-        setId(Helper.getOpportunityId());
+        setId(Helper.setOpportunityId());
         setProduct();
         setQuantity();
         setDecisionMaker(decisionMaker);
