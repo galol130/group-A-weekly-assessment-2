@@ -65,7 +65,7 @@ public class Command {
 			int trucksQty = Input.getNumberUserInput("How many trucks?");
 
 //			Create new opportunity with the data collected
-			Data.addOpportunity(new Opportunity(productEnum, trucksQty, contact, Status.OPEN));
+			Data.addOpportunity(new Opportunity(contact));
 
 //			Create account
 

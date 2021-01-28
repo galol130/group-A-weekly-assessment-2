@@ -1,40 +1,40 @@
 package com.ironhack.classes;
 
 public class Helper {
-    private static int leadId = 0;
-    private static int opportunityId = 0;
-    private static int contactId = 0;
-    private static int accountId = 0;
+    private static Integer leadId = 0;
+    private static Integer opportunityId = 0;
+    private static Integer contactId = 0;
+    private static Integer accountId = 0;
 
-    public static int setLeadId() {
+    public static Integer setLeadId() {
         return ++leadId;
     }
 
-    public static int setOpportunityId() {
+    public static Integer setOpportunityId() {
         return ++opportunityId;
     }
 
-    public static int setContactId() {
+    public static Integer setContactId() {
         return ++contactId;
     }
 
-    public static int setAccountId() {
+    public static Integer setAccountId() {
         return ++accountId;
     }
 
-    public static int getLeadId() {
+    public static Integer getLeadId() {
         return leadId;
     }
 
-    public static int getOpportunityId() {
+    public static Integer getOpportunityId() {
         return opportunityId;
     }
 
-    public static int getContactId() {
+    public static Integer getContactId() {
         return contactId;
     }
 
-    public static int getAccountId() {
+    public static Integer getAccountId() {
         return accountId;
     }
 }

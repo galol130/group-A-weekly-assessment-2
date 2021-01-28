@@ -6,7 +6,7 @@ import java.util.Arrays;
 import java.util.List;
 
 public class Account {
-    private int id;
+    private Integer id;
     private Industry industry;
     private int employeeCount;
     private String city;
@@ -26,7 +26,7 @@ public class Account {
 
 
 //  Getters and setters
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
@@ -54,7 +54,7 @@ public class Account {
         return opportunityList;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
