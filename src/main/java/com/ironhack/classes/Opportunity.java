@@ -42,8 +42,7 @@ public class Opportunity {
     }
 
     public void setProduct() {
-        String option;
-        option = Input.getEnumUserInput("Please, write the product:", (String[]) Arrays.stream(Product.values()).toArray());
+        String option  = Input.getEnumUserInput("Please, write the product:", (String[]) Arrays.stream(Product.values()).toArray());
         this.product = Product.valueOf(option);
     }
 

@@ -15,7 +15,14 @@ public class Command {
 
 		switch (command[0]){
 			case "new":
-				Data.getLeadList().add(new Lead());
+				try {
+					Lead newLead = new Lead();
+					Data.getLeadList().add(newLead);
+					System.out.println(ConsoleColors.WHITE_BOLD + "Lead created successfully with ID: " + newLead.getId());
+				}catch (Exception e) {
+					System.out.println(ConsoleColors.RED_BOLD + "Couldn't save the Lead. Try again!");
+					System.out.println(ConsoleColors.WHITE_BOLD);
+				}
 				break;
 			case "show":
 				if(command[1].equals("leads"))
@@ -53,16 +60,17 @@ public class Command {
 			Contact contact = new Contact(lead);
 			Data.getContactList().add(contact);
 
-//			Ask the user about the product, allowing only the options in Product Enumerator
-			String prompt = "Which is the product?";
-			String product = Input.getEnumUserInput(prompt, (String[]) Arrays.stream(Product.values()).toArray());
-			Product productEnum = Product.valueOf(product);
-
-//			Ask the user for the number of trucks
-			int trucksQty = Input.getNumberUserInput("How many trucks?");
-
-//			Create new opportunity with the data collected and add it to the list
-			Opportunity opp = new Opportunity(productEnum, trucksQty, contact, Status.OPEN);
+////			Ask the user about the product, allowing only the options in Product Enumerator
+//			String prompt = "Which is the product?";
+//			String product = Input.getEnumUserInput(prompt, (String[]) Arrays.stream(Product.values()).toArray());
+//			Product productEnum = Product.valueOf(product);
+//
+////			Ask the user for the number of trucks
+//			int trucksQty = Input.getNumberUserInput("How many trucks?");
+//
+////			Create new opportunity with the data collected and add it to the list
+//			Opportunity opp = new Opportunity(productEnum, trucksQty, contact, Status.OPEN);
+			Opportunity opp = null;
 			Data.getOpportunityList().add(opp);
 
 //			Create account and add it to the list
