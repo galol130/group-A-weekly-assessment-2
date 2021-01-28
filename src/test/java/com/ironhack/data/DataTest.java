@@ -12,6 +12,10 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class DataTest {
 
+    //We have tested the Lead related methods but these methods are tested just by using them, as they just show 2
+    //messages depending on what the user has written. It is never something that would stop the application or
+    // anything like that.
+
     private List<Lead> leadList = new ArrayList<>();
 
     @BeforeEach
@@ -62,19 +66,4 @@ class DataTest {
         Data.deleteLead(new Lead(4, "bla bla", "bla bla", "bla bla", "ble"));
     }
 
-    @Test
-    void changeOpportunityStatus() {
-    }
-
-    @Test
-    void getOpportunityById() {
-    }
-
-    @Test
-    void showAccounts() {
-    }
-
-    @Test
-    void showOpportunities() {
-    }
 }
