@@ -42,10 +42,10 @@ public class Data {
         }
     }
 
-//  Adds an opportunity to the list of opportunities
-    public static void addOpportunity(Opportunity opportunity) {
-        opportunityList.add(opportunity);
-    }
+////  Adds an opportunity to the list of opportunities
+//    public static void addOpportunity(Opportunity opportunity) {
+//        opportunityList.add(opportunity);
+//    }
 
 //  Removes the lead by ID
     public static void deleteLead(int num) {

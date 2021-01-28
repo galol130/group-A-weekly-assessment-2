@@ -47,10 +47,11 @@ public class Command {
 	public static void convert(Integer id){
 //		First we get the Lead using the id
 		Lead lead = Data.getLeadById(id);
+
 		if(lead != null) {
-//			Create contact using information in lead
+//			Create contact using information in lead and add it to the list
 			Contact contact = new Contact(lead);
-			int index = 0;
+			Data.getContactList().add(contact);
 
 //			Ask the user about the product, allowing only the options in Product Enumerator
 			String prompt = "Which is the product?";
@@ -60,20 +61,17 @@ public class Command {
 //			Ask the user for the number of trucks
 			int trucksQty = Input.getNumberUserInput("How many trucks?");
 
-//			Create new opportunity with the data collected
+//			Create new opportunity with the data collected and add it to the list
 			Opportunity opp = new Opportunity(productEnum, trucksQty, contact, Status.OPEN);
-			Data.addOpportunity(opp);
-
-//			Create account
-			//First add contact to contactList
-			//The add opportunity to opportunityList
-			//Finally add a new account con accountList
-			Data.getContactList().add(contact);
 			Data.getOpportunityList().add(opp);
+
+//			Create account and add it to the list
 			Data.getAccountList().add(new Account(Data.getContactList(), Data.getOpportunityList()));
 
+			System.out.println(ConsoleColors.WHITE_BOLD + "Lead ID: " + lead.getId() + " converted successfully!");
+
 // 			Finally, the lead is deleted
-			Data.deleteLead(index);
+			Data.deleteLead(lead.getId());
 
 		}else{
 			System.out.println(ConsoleColors.RED_BOLD + "Error fetching the ID! Check the ID. If error persists, contact admin");
