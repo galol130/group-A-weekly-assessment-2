@@ -51,7 +51,7 @@ public class Data {
 
 //  Removes the lead by ID
     public static void deleteLead(Lead lead) {
-        leadList.remove(leadList.indexOf(lead));
+        leadList.remove(lead);
     }
 
 //  Looks for the opportunity and changes it's status accordingly to the user input
