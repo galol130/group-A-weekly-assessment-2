@@ -42,7 +42,8 @@ public class Opportunity {
     }
 
     public void setProduct() {
-        String option  = Input.getEnumUserInput("Please, write the product:", (String[]) Arrays.stream(Product.values()).toArray());
+        String[] myEnums = Arrays.stream(Product.values()).map(Enum::name).toArray(String[]::new);
+        String option  = Input.getEnumUserInput("Please, write the product:", myEnums);
         this.product = Product.valueOf(option);
     }
 

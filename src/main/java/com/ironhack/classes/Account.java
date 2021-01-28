@@ -1,6 +1,7 @@
 package com.ironhack.classes;
 
 import com.ironhack.enums.Industry;
+import com.ironhack.enums.Product;
 
 import java.util.Arrays;
 import java.util.List;
@@ -59,8 +60,8 @@ public class Account {
     }
 
     public void setIndustry() {
-        String option;
-        option = Input.getEnumUserInput("Please, write the industry:", (String[]) Arrays.stream(Industry.values()).toArray());
+        String[] myEnums = Arrays.stream(Industry.values()).map(Enum::name).toArray(String[]::new);
+        String option = Input.getEnumUserInput("Please, write the industry:", myEnums);
         this.industry = Industry.valueOf(option);
     }
 
