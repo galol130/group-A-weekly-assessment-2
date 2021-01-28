@@ -16,15 +16,16 @@ public class Data {
 //  method createID() in the Lead class, IDs are also the position of each lead in the leadList.
     public static void showLeads() {
         if (leadList.size() > 0) {
+            System.out.println(ConsoleColors.WHITE_BRIGHT + "Leads:");
             for (Lead lead : leadList) {
-                System.out.println("Lead ID: " + lead.getId() +
-                        " --> Name: " + lead.getName() +
+                System.out.println(ConsoleColors.WHITE_BRIGHT + "\tID " + lead.getId() +
+                        ConsoleColors.WHITE_BOLD + " --> Name: " + lead.getName() +
                         ", Company: " + lead.getCompanyName());
             }
         } else {
             System.out.println(ConsoleColors.RED_BOLD + "No leads to show, list empty.");
-            System.out.println(ConsoleColors.WHITE_BOLD);
         }
+        System.out.println(ConsoleColors.WHITE_BOLD);
     }
 
 //  lookUpLead will show all the details of a lead on the console. It just iterates through our list of leads and
@@ -35,7 +36,7 @@ public class Data {
         for (Lead lead : leadList) {
             if (id == lead.getId()) {
                 check = true;
-                System.out.println(ConsoleColors.YELLOW_BOLD + lead);
+                System.out.println(ConsoleColors.WHITE_BRIGHT + lead);
                 System.out.println(ConsoleColors.WHITE_BOLD);
             }
         }
@@ -61,16 +62,20 @@ public class Data {
         if(opp != null){
             String option = "";
             while (!option.equals("won") && !option.equals("lost")){
-                option = Input.getStringUserInput("Type 'won' or 'lost' to close the Opportunity and change it's status").toLowerCase();
+                option = Input.getStringUserInput("Type "+
+                        ConsoleColors.WHITE_BRIGHT+ "'won'" +
+                        ConsoleColors.WHITE_BOLD + " or " +
+                        ConsoleColors.WHITE_BRIGHT + "'lost'" +
+                        ConsoleColors.WHITE_BOLD + "to close the Opportunity and change its status.").toLowerCase();
             }
             if(option.equals("won")){
                 opp.setStatus(Status.CLOSED_WON);
-                System.out.println(ConsoleColors.YELLOW_BOLD + "Opportunity set as 'Closed-Won'");
+                System.out.println(ConsoleColors.WHITE_BRIGHT + "--> Opportunity "+ id + "set as 'Closed-Won'.");
                 System.out.println(ConsoleColors.WHITE_BOLD);
             }
             if(option.equals("lost")){
                 opp.setStatus(Status.CLOSED_LOST);
-                System.out.println(ConsoleColors.YELLOW_BOLD + "Opportunity set as 'Closed-Lost'");
+                System.out.println(ConsoleColors.WHITE_BRIGHT + "--> Opportunity " + id + " set as 'Closed-Lost'.");
                 System.out.println(ConsoleColors.WHITE_BOLD);
             }
         }else{
@@ -92,24 +97,26 @@ public class Data {
 
     public static void showAccounts() {
         if (accountList.size() > 0) {
+            System.out.println(ConsoleColors.WHITE_BRIGHT + "Accounts: ");
             for (Account account : accountList) {
                 System.out.println(account.toString());
             }
         } else {
             System.out.println(ConsoleColors.RED_BOLD + "No accounts created yet!");
-            System.out.println(ConsoleColors.WHITE_BOLD);
         }
+        System.out.println(ConsoleColors.WHITE_BOLD);
     }
 
     public static void showOpportunities() {
         if (opportunityList.size() > 0) {
+            System.out.println(ConsoleColors.WHITE_BRIGHT + "Opportunities:");
             for (Opportunity opportunity : opportunityList) {
                 System.out.println(opportunity.toString());
             }
         } else {
             System.out.println(ConsoleColors.RED_BOLD + "No Opportunities created yet!");
-            System.out.println(ConsoleColors.WHITE_BOLD);
         }
+        System.out.println(ConsoleColors.WHITE_BOLD);
     }
 
     public static List<Lead> getLeadList() {

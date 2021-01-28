@@ -63,7 +63,7 @@ public class Lead {
 
     @Override
     public String toString() {
-        return "Lead ID: " + id +
+        return "\tID: " + id +
                 " --- Name: " + name +
                 " --- Phone Number: " + phoneNumber +
                 " --- Email: " + email +
