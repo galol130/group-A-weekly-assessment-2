@@ -11,6 +11,8 @@ import java.util.Scanner;
 
 public class Command {
 
+//	commandCaller method is used to parse the different methods available, it will call the adequate one depending on
+//	user input.
 	public static void commandCaller(String[] command) {
 
 		switch (command[0]){
@@ -53,27 +55,20 @@ public class Command {
 		sc.nextLine();
 	}
 
+//		First it gets the Lead using the id. Then it creates contact using information in lead and add it to the list.
+//		Then it creates opportunity with contact information. The other fields are asked by the class.
+// 		Then it creates an account and adds it to the list. Finally, the lead is deleted.
 	public static void convert(Integer id){
-//		First we get the Lead using the id
 		Lead lead = Data.getLeadById(id);
 
 		if(lead != null) {
-//			Create contact using information in lead and add it to the list
 			Contact contact = new Contact(lead.getName(), lead.getPhoneNumber(), lead.getEmail(), lead.getCompanyName());
 			Data.getContactList().add(contact);
-
-//			Create opportunity with contact information. The other fields are asked by the class.
 			Opportunity opp = new Opportunity(contact);
 			Data.getOpportunityList().add(opp);
-
-//			Create account and add it to the list
 			Data.getAccountList().add(new Account(Data.getContactList(), Data.getOpportunityList()));
-
 			System.out.println(ConsoleColors.WHITE_BOLD + "Lead ID: " + lead.getId() + " converted successfully!");
-
-// 			Finally, the lead is deleted
 			Data.deleteLead(lead.getId());
-
 		}else{
 			System.out.println(ConsoleColors.RED_BOLD + "Error fetching the ID! Check the ID. If error persists, contact admin");
 			System.out.println(ConsoleColors.WHITE_BOLD);
