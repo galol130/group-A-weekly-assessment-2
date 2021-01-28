@@ -31,7 +31,7 @@ public class Command {
 					Data.showLeads();
 				else if(command[1].equals("accounts"))
 					Data.showAccounts();
-				else
+				else if(command[1].equals("opps"))
 					Data.showOpportunities();
 				break;
 			case "lookup":
@@ -68,7 +68,7 @@ public class Command {
 			Data.getOpportunityList().add(opp);
 			Data.getAccountList().add(new Account(Data.getContactList(), Data.getOpportunityList()));
 			System.out.println(ConsoleColors.WHITE_BOLD + "Lead ID: " + lead.getId() + " converted successfully!");
-			Data.deleteLead(lead.getId());
+			Data.deleteLead(lead);
 		}else{
 			System.out.println(ConsoleColors.RED_BOLD + "Error fetching the ID! Check the ID. If error persists, contact admin");
 			System.out.println(ConsoleColors.WHITE_BOLD);

@@ -17,7 +17,9 @@ public class Data {
     public static void showLeads() {
         if (leadList.size() > 0) {
             for (Lead lead : leadList) {
-                System.out.println("Lead ID: " + lead.getId() + " --> Name: " + lead.getName());
+                System.out.println("Lead ID: " + lead.getId() +
+                        " --> Name: " + lead.getName() +
+                        ", Company: " + lead.getCompanyName());
             }
         } else {
             System.out.println(ConsoleColors.RED_BOLD + "No leads to show, list empty.");
@@ -48,8 +50,8 @@ public class Data {
 //    }
 
 //  Removes the lead by ID
-    public static void deleteLead(int num) {
-        leadList.remove(num-1);
+    public static void deleteLead(Lead lead) {
+        leadList.remove(leadList.indexOf(lead));
     }
 
 //  Looks for the opportunity and changes it's status accordingly to the user input

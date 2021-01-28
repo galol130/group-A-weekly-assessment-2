@@ -38,6 +38,7 @@ public class Start {
                 ConsoleColors.WHITE_BRIGHT + "\tLookup lead [id]"+ ConsoleColors.WHITE_BOLD +" to search for a specific lead.\n" +
                 ConsoleColors.BLUE + "Opportunities\n" + ConsoleColors.WHITE_BOLD +
                 ConsoleColors.WHITE_BRIGHT + "\tConvert [id]"+ ConsoleColors.WHITE_BOLD +" to convert a lead into an opportunity.\n" +
+                ConsoleColors.WHITE_BRIGHT + "\tShow opps"+ ConsoleColors.WHITE_BOLD +" to view all current opportunities.\n" +
                 ConsoleColors.WHITE_BRIGHT + "\tChange status [id]"+ ConsoleColors.WHITE_BOLD +" to change an opportunity status.\n" +
                 ConsoleColors.BLUE + "Accounts\n" + ConsoleColors.WHITE_BOLD +
                 ConsoleColors.WHITE_BRIGHT + "\tShow accounts"+ ConsoleColors.WHITE_BOLD +" to view all current accounts.\n" +

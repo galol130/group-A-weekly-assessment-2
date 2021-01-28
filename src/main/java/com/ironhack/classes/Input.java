@@ -20,6 +20,7 @@ public class Input {
             if (command.equals("new lead")
                     || command.equals("show leads")
                     || command.equals("show accounts")
+                    || command.equals("show opps")
                     || command.equals("exit")) {
                 return commandSplit;
             } else if (commandSplit.length == 2
@@ -110,11 +111,13 @@ public class Input {
                 result = Integer.parseInt(str);
                 if (result < 0) {
                     System.out.println(ConsoleColors.RED_BOLD + "Number must be positive.");
+                    System.out.println(ConsoleColors.WHITE_BOLD);
                     str = "";
                 }
             }
             catch (NumberFormatException e) {
                 System.out.println(ConsoleColors.RED_BOLD + "You must type a number.");
+                System.out.println(ConsoleColors.WHITE_BOLD);
                 str = "";
             }
             catch (Exception e) {
