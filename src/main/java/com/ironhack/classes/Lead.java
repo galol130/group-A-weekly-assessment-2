@@ -12,12 +12,12 @@ public class Lead {
     private String email;
     private String companyName;
 
-    public Lead(String name, String phoneNumber, String email, String companyName) {
+    public Lead() {
         setId(Helper.setLeadId());
-        setName(name);
-        setPhoneNumber(phoneNumber);
-        setEmail(email);
-        setCompanyName(companyName);
+        setName();
+        setPhoneNumber();
+        setEmail();
+        setCompanyName();
     }
 
 //  Getters and setters
@@ -33,7 +33,7 @@ public class Lead {
         return name;
     }
 
-    public void setName(String name) {
+    public void setName() {
         this.name = Input.getStringUserInput("Please, write the name:");
     }
 
@@ -41,7 +41,7 @@ public class Lead {
         return phoneNumber;
     }
 
-    public void setPhoneNumber(String phoneNumber) {
+    public void setPhoneNumber() {
         this.phoneNumber = Input.getStringUserInput("Please, write the phone number:");
     }
 
@@ -49,7 +49,7 @@ public class Lead {
         return email;
     }
 
-    public void setEmail(String email) {
+    public void setEmail() {
         this.email = Input.getStringUserInput("Please, write the email:");
     }
 
@@ -57,7 +57,7 @@ public class Lead {
         return companyName;
     }
 
-    public void setCompanyName(String companyName) {
+    public void setCompanyName() {
         this.companyName = Input.getStringUserInput("Please, write the city:");
     }
 

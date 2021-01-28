@@ -1,9 +1,6 @@
 package com.ironhack.commands;
 
-import com.ironhack.classes.Contact;
-import com.ironhack.classes.Input;
-import com.ironhack.classes.Lead;
-import com.ironhack.classes.Opportunity;
+import com.ironhack.classes.*;
 import com.ironhack.data.Data;
 import com.ironhack.enums.Product;
 import com.ironhack.enums.Status;
@@ -18,8 +15,7 @@ public class Command {
 
 		switch (command[0]){
 			case "new":
-				//El la propia clase lead generar los datos necesarios con los setters.
-				//Data.getLeadList().add(new Lead());
+				Data.getLeadList().add(new Lead());
 				break;
 			case "show":
 				if(command[1].equals("leads"))
@@ -65,10 +61,16 @@ public class Command {
 			int trucksQty = Input.getNumberUserInput("How many trucks?");
 
 //			Create new opportunity with the data collected
-			Data.addOpportunity(new Opportunity(productEnum, trucksQty, contact, Status.OPEN));
+			Opportunity opp = new Opportunity(productEnum, trucksQty, contact, Status.OPEN);
+			Data.addOpportunity(opp);
 
 //			Create account
-
+			//First add contact to contactList
+			//The add opportunity to opportunityList
+			//Finally add a new account con accountList
+			Data.getContactList().add(contact);
+			Data.getOpportunityList().add(opp);
+			Data.getAccountList().add(new Account(Data.getContactList(), Data.getOpportunityList()));
 
 // 			Finally, the lead is deleted
 			Data.deleteLead(index);
