@@ -27,8 +27,10 @@ public class Command {
 			case "show":
 				if(command[1].equals("leads"))
 					Data.showLeads();
-				else
+				else if(command[1].equals("accounts"))
 					Data.showAccounts();
+				else
+					Data.showOpportunities();
 				break;
 			case "lookup":
 				Data.lookUpLead(Integer.parseInt(command[2]));

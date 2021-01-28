@@ -13,6 +13,7 @@ public class Input {
 
         while (true) {
             System.out.println(ConsoleColors.YELLOW_BOLD + "\nType a command:");
+            System.out.println(ConsoleColors.WHITE_BOLD);
             command = scanner.nextLine().toLowerCase().trim();
             commandSplit = command.split(" ");
 //          Validates if the command is ok and doesn't require an [id]
@@ -80,6 +81,7 @@ public class Input {
         String userString;
 
         while (true) {
+            System.out.println(ConsoleColors.WHITE_BOLD);
             System.out.println(prompt);
             for (String enumElement : enumList) {
                 System.out.println("\t"+enumElement);
@@ -91,6 +93,7 @@ public class Input {
                 }
             }
             System.out.println(ConsoleColors.RED_BOLD + "Not a valid input. Try again.");
+            System.out.println(ConsoleColors.WHITE_BOLD);
         }
     }
 

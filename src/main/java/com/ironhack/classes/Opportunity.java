@@ -70,4 +70,14 @@ public class Opportunity {
     public void setStatus(Status status) {
         this.status = status;
     }
+
+    @Override
+    public String toString() {
+        return "Opportunity ID: " + id +
+                ", Product: " + product.name() +
+                ", Quantity: " + quantity +
+                ", Decision Maker: " + decisionMaker.getName() +  ", from company: " + decisionMaker.getCompanyName() +
+                " - Phone: " + decisionMaker.getPhoneNumber() + " - Email: " + decisionMaker.getEmail() +
+                " || STATUS: " + status.name();
+    }
 }

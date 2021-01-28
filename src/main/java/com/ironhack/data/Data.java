@@ -49,7 +49,7 @@ public class Data {
 
 //  Removes the lead by ID
     public static void deleteLead(int num) {
-        leadList.remove(num);
+        leadList.remove(num-1);
     }
 
 //  Looks for the opportunity and changes it's status accordingly to the user input
@@ -91,6 +91,17 @@ public class Data {
             }
         } else {
             System.out.println(ConsoleColors.RED_BOLD + "No accounts created yet!");
+            System.out.println(ConsoleColors.WHITE_BOLD);
+        }
+    }
+
+    public static void showOpportunities() {
+        if (opportunityList.size() > 0) {
+            for (Opportunity opportunity : opportunityList) {
+                System.out.println(opportunity.toString());
+            }
+        } else {
+            System.out.println(ConsoleColors.RED_BOLD + "No Opportunities created yet!");
             System.out.println(ConsoleColors.WHITE_BOLD);
         }
     }

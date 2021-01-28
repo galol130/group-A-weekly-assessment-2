@@ -70,11 +70,11 @@ public class Account {
     }
 
     public void setCity() {
-        this.city = Input.getStringUserInput("Please, write the city:");
+        this.city = Input.getStringUserInput("Please, write the city of the Company:");
     }
 
     public void setCountry() {
-        this.country = Input.getStringUserInput("Please, write the country:");
+        this.country = Input.getStringUserInput("Please, write the country of the Company:");
     }
 
     public void setContactList(List<Contact> contactList) {
@@ -87,14 +87,13 @@ public class Account {
 
     @Override
     public String toString() {
-        return "Account{" +
-                "id=" + id +
-                ", industry=" + industry +
-                ", employeeCount=" + employeeCount +
-                ", city='" + city + '\'' +
-                ", country='" + country + '\'' +
-                ", contactList=" + contactList +
-                ", opportunityList=" + opportunityList +
+        return  "\tID=" + id +
+                " |  Industry: " + industry +
+                ", EmployeeCount: " + employeeCount +
+                ", City: " + city +
+                ", Country: " + country +
+                ", Number of Contacts: " + contactList.size() +
+                ", Number of Opportunities: " + opportunityList.size() +
                 '}';
     }
 }
