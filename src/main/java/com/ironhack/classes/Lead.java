@@ -20,7 +20,16 @@ public class Lead {
         setCompanyName();
     }
 
-//  Getters and setters
+    //This constructor is only created for the sake of the tests. Has no use in the project besides that.
+    public Lead(Integer id, String name, String phoneNumber, String email, String companyName) {
+        this.id = id;
+        this.name = name;
+        this.phoneNumber = phoneNumber;
+        this.email = email;
+        this.companyName = companyName;
+    }
+
+    //  Getters and setters
     public Integer getId() {
         return id;
     }

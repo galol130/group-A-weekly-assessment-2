@@ -1,24 +1,44 @@
 package com.ironhack.data;
 
+import com.ironhack.classes.Lead;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 class DataTest {
 
+    private List<Lead> leadList = new ArrayList<>();
+
     @BeforeEach
     public void setUp() {
+        leadList.add(new Lead(1, "James McCarthy", "555-6661124", "invented@email.haha"
+                        ,"invented company S.L."));
+        leadList.add(new Lead(2, "Carles Puyol", "+34 65435631", "carles@puyi.com"
+                        , "FC Barcelona"));
+        Data.setLeadList(leadList);
     }
 
     @AfterEach
     public void tearDown() {
+        leadList.clear();
     }
 
     @Test
-    void showLeads() {
+    void showLeads_LeadList_LeadsShownAppropriately() {
+        Data.showLeads();
     }
+
+    @Test
+    void showLeads_EmptyLeadList_ErrorMessage() {
+        leadList.clear();
+        Data.showLeads();
+    }
+
 
     @Test
     void lookUpLead() {

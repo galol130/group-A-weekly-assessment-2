@@ -22,7 +22,7 @@ public class Data {
                         ", Company: " + lead.getCompanyName());
             }
         } else {
-            System.out.println(ConsoleColors.RED_BOLD + "No leads to show, list empty.");
+            System.out.println(ConsoleColors.RED_BOLD + "No leads to show, list is empty.");
             System.out.println(ConsoleColors.WHITE_BOLD);
         }
     }
