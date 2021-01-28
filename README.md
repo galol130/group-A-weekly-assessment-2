@@ -2,7 +2,13 @@
 EMOF CRM
 
 
+Use Case Diagram:
 
+![alt text](https://github.com/galol130/group-A-weekly-assessment-2/blob/develop/images/use-case-diagram.png)
+
+Class Diagram:
+
+![alt text](https://github.com/galol130/group-A-weekly-assessment-2/blob/develop/images/class-diagram.JPG)
 
 
 We have created unit tests for every method other than basic getters, setters, constructors and methods that required user input.
