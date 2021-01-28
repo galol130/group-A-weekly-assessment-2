@@ -93,7 +93,7 @@ public class Data {
         for (Lead lead : leadList) {
             if (id == lead.getId()) {
                 check = true;
-                contactList.add(new Contact(lead));
+                contactList.add(new Contact(lead.getName(), lead.getPhoneNumber(), lead.getEmail(), lead.getCompanyName()));
                 leadList.remove(id);
             }
         }

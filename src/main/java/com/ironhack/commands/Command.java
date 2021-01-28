@@ -50,7 +50,7 @@ public class Command {
 
 		if(lead != null) {
 //			Create contact using information in lead and add it to the list
-			Contact contact = new Contact(lead);
+			Contact contact = new Contact(lead.getName(), lead.getPhoneNumber(), lead.getEmail(), lead.getCompanyName());
 			Data.getContactList().add(contact);
 
 //			Ask the user about the product, allowing only the options in Product Enumerator

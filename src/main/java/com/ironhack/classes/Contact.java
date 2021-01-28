@@ -1,30 +1,59 @@
 package com.ironhack.classes;
 
 public class Contact {
-    private int id;
-    private Lead lead;
+    private Integer id;
+    private String name;
+    private String phoneNumber;
+    private String email;
+    private String companyName;
 
-    public Contact(Lead lead) {
-        setId();
-        this.lead = lead;
+    public Contact(String name, String phoneNumber, String email, String companyName) {
+        setId(Helper.setContactId());
+        setName(name);
+        setPhoneNumber(phoneNumber);
+        setEmail(email);
+        setCompanyName(companyName);
     }
 
-//Getters and setters
-
-    public int getId() {
+    //Getters and setters
+    public Integer getId() {
         return id;
     }
 
-    //Utilizar el helper
-    public void setId() {
-        this.id = 1;
+    public void setId(Integer id) {
+        this.id = id;
     }
 
-    public Lead getLead() {
-        return lead;
+    public String getName() {
+        return name;
     }
 
-    public void setLead(Lead lead) {
-        this.lead = lead;
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getPhoneNumber() {
+        return phoneNumber;
+    }
+
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getCompanyName() {
+        return companyName;
+    }
+
+    public void setCompanyName(String companyName) {
+        this.companyName = companyName;
     }
 }
+
