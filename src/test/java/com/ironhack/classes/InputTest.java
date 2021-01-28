@@ -17,15 +17,20 @@ class InputTest {
     }
 
     @Test
-    void getValidCommand() {
+    void validIdFormat_ValidInput_True() {
+        assertTrue(Input.validIdFormat("100"));
+        assertTrue(Input.validIdFormat("10000"));
     }
 
     @Test
-    void validIdFormat() {
+    void validIdFormat_inValidInput_False() {
+        assertFalse(Input.validIdFormat("asf"));
+        assertFalse(Input.validIdFormat("-10000"));
     }
 
     @Test
     void getStringUserInput() {
+
     }
 
     @Test

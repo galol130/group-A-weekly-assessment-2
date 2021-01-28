@@ -46,10 +46,15 @@ public class Input {
         }
     }
 
-//    Validates if Id is an integer
+//    Validates if Id is a positive integer
     public static boolean validIdFormat(String stringId) {
         try {
-            Integer.parseInt(stringId);
+            int numId = Integer.parseInt(stringId);
+            if (numId <= 0) {
+                System.out.println(ConsoleColors.RED_BOLD + "Number must be positive.");
+                System.out.println(ConsoleColors.WHITE_BOLD);
+                return false;
+            }
             return true;
         } catch (Exception e) {
             System.out.println(ConsoleColors.RED_BOLD + "Error: An integer was expected as an Id");
